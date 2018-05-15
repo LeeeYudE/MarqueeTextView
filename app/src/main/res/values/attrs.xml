@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <declare-styleable name="MarqueeTextView">
+        <attr name="content" format="string|reference"/>
+        <attr name="backgroundColor" format="color|reference"/>
+        <attr name="textColor" format="color|reference"/>
+        <attr name="speed" >
+            <enum name="slow" value="1"/>
+            <enum name="normal" value="2"/>
+            <enum name="fast" value="3"/>
+        </attr>
+    </declare-styleable>
+
+        <declare-styleable name="ScrollTextView">
+            <attr name="scroll_interval" format="integer" />
+            <attr name="scroll_first_delay" format="integer"/>
+            <attr name="scroll_mode">
+                <enum name="mode_forever" value="100"/>
+                <enum name="mode_once" value="101"/>
+            </attr>
+        </declare-styleable>
+
+</resources>

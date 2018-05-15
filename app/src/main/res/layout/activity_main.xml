@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    tools:context="marqueetextview.charco.android.marqueetextview.MainActivity">
+
+    <EditText
+        android:id="@+id/et_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="请输入显示文字"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:text="文字颜色"/>
+
+        <FrameLayout
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="3dp"
+            android:background="@color/gray">
+
+            <View
+                android:id="@+id/view_text"
+                android:onClick="showTextColor"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@color/text_color"/>
+
+
+        </FrameLayout>
+
+        <ImageView
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/reset"
+            android:onClick="resetTextColor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:text="背景颜色"/>
+
+        <FrameLayout
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="3dp"
+            android:background="@color/gray">
+
+            <View
+                android:id="@+id/view_backgroud"
+                android:onClick="showBackgroudColor"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@color/background_color"/>
+
+
+        </FrameLayout>
+
+        <ImageView
+            android:layout_marginLeft="10dp"
+            android:onClick="resetBackgroudText"
+            android:src="@drawable/reset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+
+     <LinearLayout
+         android:visibility="gone"
+         android:id="@+id/llt_color"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_marginTop="10dp"
+         android:layout_gravity="center_horizontal"
+         android:orientation="vertical">
+
+         <ImageView
+             android:onClick="hideColor"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:src="@drawable/close"
+             android:layout_gravity="right"/>
+
+         <com.skydoves.colorpickerview.ColorPickerView
+             android:id="@+id/colorPickerView"
+             app:src="@drawable/palette"
+             app:selector="@drawable/wheel"
+             android:layout_width="200dp"
+             android:layout_height="200dp" />
+
+     </LinearLayout>
+
+    <RadioGroup
+        android:id="@+id/rg_speed"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checkedButton="@id/rb_normal"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rb_slow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="慢速"/>
+
+        <RadioButton
+            android:id="@+id/rb_normal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="正常"/>
+
+        <RadioButton
+            android:id="@+id/rb_fast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="快速"/>
+
+    </RadioGroup>
+
+    <Button
+        android:layout_marginTop="10dp"
+        android:text="完成"
+        android:onClick="complete"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
